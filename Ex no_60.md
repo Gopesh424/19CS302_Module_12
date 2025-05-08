@@ -17,57 +17,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define node structure
+
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Define front and rear pointers
 struct Node* front = NULL;
 struct Node* rear = NULL;
 
-// Enqueue function
-void enqueue(int value) {
+void enqueue(int value)
+ {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
     newNode->next = NULL;
 
-    if (rear == NULL) {
+    if (rear == NULL)
+ {
         front = rear = newNode;
-    } else {
+    }
+else
+{
         rear->next = newNode;
         rear = newNode;
     }
 }
 
-// Peek function - returns the front element
-int peek() {
-    if (front == NULL) {
+int peek()
+ {
+    if (front == NULL)
+ {
         printf("Queue is empty.\n");
         return -1;  // Sentinel value
-    } else {
+    }
+else
+{
         return front->data;
     }
 }
 
-// Display the queue (for demonstration)
-void display() {
+void display()
+ {
     struct Node* temp = front;
-    if (front == NULL) {
+    if (front == NULL)
+ {
         printf("Queue is empty.\n");
         return;
     }
     printf("Queue elements: ");
-    while (temp != NULL) {
+    while (temp != NULL)
+{
         printf("%d ", temp->data);
         temp = temp->next;
     }
     printf("\n");
 }
 
-// Main function
-int main() {
+int main()
+{
     enqueue(10);
     enqueue(20);
     enqueue(30);
