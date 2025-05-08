@@ -54,6 +54,12 @@ push(30.01);
 
 display();
 
+30.01
+
+20.01
+
+10.01
+
 
 ## Result:
 Thus the program was executed and the output was verified successfully.
